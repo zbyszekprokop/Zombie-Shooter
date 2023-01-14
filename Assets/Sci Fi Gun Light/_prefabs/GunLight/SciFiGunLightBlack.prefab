@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 453068}
   - component: {fileID: 3316574}
   - component: {fileID: 2346984}
-  - component: {fileID: 2562875777448424754}
   m_Layer: 0
   m_Name: SciFiGunLightBlack
   m_TagString: Untagged
@@ -29,8 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.472161, y: 2.0237794, z: 5.4314585}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5457894804546981677}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,81 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2562875777448424754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280907208fb3dce4b831bb9943f3655b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FPCamera: {fileID: 0}
-  range: 100
-  weaponDamage: 20
-  MuzzleFlash: {fileID: 0}
---- !u!1001 &2942790031489536043
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 453068}
-    m_Modifications:
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7168729519743033388, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-      propertyPath: m_Name
-      value: VFX_M4 Muzzle Flash
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
---- !u!4 &5457894804546981677 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7163174878165049094, guid: af9128e02c1d4c240bf9a0f98c5fb937, type: 3}
-  m_PrefabInstance: {fileID: 2942790031489536043}
-  m_PrefabAsset: {fileID: 0}

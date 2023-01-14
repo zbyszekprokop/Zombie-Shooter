@@ -10,7 +10,16 @@ public class Weapon : MonoBehaviour
     [SerializeField]ParticleSystem MuzzleFlash;
     [SerializeField]GameObject HitEffect;
     [SerializeField]Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
+    [SerializeField]float timeBetweenShots =0.5f;
     GameObject parentGameObject;
+    
+
+    bool canShoot=true;
+    private void OnEnable() 
+    {
+        canShoot=true;
+    }
 
     void Start() 
     {
@@ -18,19 +27,22 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1")&& canShoot==true)
         {
-            if(ammoSlot.GetCurrentAmmo() >= 1)
-            {
-                Shoot();
-            }          
+                StartCoroutine(Shoot());
         }
     }
-    void Shoot()
+    IEnumerator Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRaycast();
-        ammoSlot.ReduceCurrentAmmo();
+        canShoot=false;
+        if(ammoSlot.GetCurrentAmmo(ammoType) >=1)
+        {
+            PlayMuzzleFlash();
+            ProcessRaycast();
+            ammoSlot.ReduceCurrentAmmo(ammoType);
+        }
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot=true;
     }
     void PlayMuzzleFlash()
     {

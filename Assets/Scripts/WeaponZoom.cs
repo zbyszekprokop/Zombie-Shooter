@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 public class WeaponZoom : MonoBehaviour
 {
+    [SerializeField]Camera fpsCamera;
+    [SerializeField]RigidbodyFirstPersonController firstPersonController;
     [SerializeField]float zoomFieldOfView = 30f;
     [SerializeField]float outZoomFOV =60f;
     [SerializeField]float zoomInSensitivity = .5f;
     [SerializeField]float zoomOutSensitivity = 2f;
+
     bool isZoom = false;
-    RigidbodyFirstPersonController firstPersonController;
-
-    void Start() 
+    private void OnDisable() 
     {
-        firstPersonController = GetComponent<RigidbodyFirstPersonController>();
+        ZoomOut();
     }
-
     void Update()
     {
         ZoomSequence();
@@ -27,18 +27,28 @@ public class WeaponZoom : MonoBehaviour
         {
             if(Input.GetButtonDown("Fire2"))
             {
-                Camera.main.fieldOfView = zoomFieldOfView;
-                firstPersonController.mouseLook.XSensitivity = zoomInSensitivity;
-                firstPersonController.mouseLook.YSensitivity = zoomInSensitivity;
-                isZoom = true;
+                ZoomIn();
             }
         }
         else if(Input.GetButtonDown("Fire2"))
-            {
-                Camera.main.fieldOfView = outZoomFOV;
-                firstPersonController.mouseLook.XSensitivity = zoomOutSensitivity;
-                firstPersonController.mouseLook.YSensitivity = zoomOutSensitivity;
-                isZoom = false;
-            }
+        {
+            ZoomOut();
+        }
+    }
+
+    private void ZoomOut()
+    {
+        Camera.main.fieldOfView = outZoomFOV;
+        firstPersonController.mouseLook.XSensitivity = zoomOutSensitivity;
+        firstPersonController.mouseLook.YSensitivity = zoomOutSensitivity;
+        isZoom = false;
+    }
+
+    void ZoomIn()
+    {
+        Camera.main.fieldOfView = zoomFieldOfView;
+        firstPersonController.mouseLook.XSensitivity = zoomInSensitivity;
+        firstPersonController.mouseLook.YSensitivity = zoomInSensitivity;
+        isZoom = true;
     }
 }
