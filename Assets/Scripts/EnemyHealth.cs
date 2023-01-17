@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("Health: " + Health);
         if(Health <= 1)
         {
-            Destroy(gameObject);
+            GetComponent<EnemyAI>().EnemyDeath();
         }
     }
 }

@@ -78,4 +78,12 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);   
     }
+    public void EnemyDeath()
+    {
+        GetComponent<Animator>().SetTrigger("death");
+        GetComponent<EnemyAI>().enabled=false;
+        GetComponent<EnemyAttack>().enabled=false;
+        GetComponent<CapsuleCollider>().enabled=false;
+        navMeshAgent.enabled=false;
+    }
 }
