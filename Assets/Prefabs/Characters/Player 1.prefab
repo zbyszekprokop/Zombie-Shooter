@@ -4893,6 +4893,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3302552251272229961}
   - {fileID: 4160732589832859558}
   m_Father: {fileID: 3050650838329082830}
   m_RootOrder: 0
@@ -5205,7 +5206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e829aa96202fa42abd87037e4d4437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoAmount: 100
+  ammoSlots: []
 --- !u!114 &3043371412393145161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5218,10 +5219,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8296fca02c1d78449f6ff6ed9e29701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsCamera: {fileID: 0}
+  firstPersonController: {fileID: 0}
   zoomFieldOfView: 30
   outZoomFOV: 60
   zoomInSensitivity: 0.5
   zoomOutSensitivity: 2
+--- !u!1 &3581833425751066185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3302552251272229961}
+  - component: {fileID: 4991690953587145622}
+  m_Layer: 0
+  m_Name: Flashlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3302552251272229961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581833425751066185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.153, y: -0.092, z: 0.549}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3050650838329082828}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &4991690953587145622
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581833425751066185}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 0.8490566, g: 0.75555474, b: 0.052064814, a: 1}
+  m_Intensity: 4
+  m_Range: 20
+  m_SpotAngle: 50.3
+  m_InnerSpotAngle: 20.4
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &8306645991629410247
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,7 +5349,7 @@ Transform:
   - {fileID: 2234611575781460921}
   - {fileID: 3304709445305682239}
   m_Father: {fileID: 3050650838329082828}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &964580268826555176
 PrefabInstance:
@@ -5428,6 +5524,8 @@ MonoBehaviour:
   MuzzleFlash: {fileID: 693811825}
   HitEffect: {fileID: 2896446538316271325, guid: 5b05f19e764ff9f4aa9fa8d98da21db6, type: 3}
   ammoSlot: {fileID: 5318587850814371544}
+  ammoType: 0
+  timeBetweenShots: 0.5
 --- !u!1001 &1767757544883973202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5533,6 +5631,8 @@ MonoBehaviour:
   MuzzleFlash: {fileID: 3045757805050618517}
   HitEffect: {fileID: 2896446538316271325, guid: 5b05f19e764ff9f4aa9fa8d98da21db6, type: 3}
   ammoSlot: {fileID: 5318587850814371544}
+  ammoType: 0
+  timeBetweenShots: 0.5
 --- !u!1001 &3050650837471520887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5696,6 +5796,8 @@ MonoBehaviour:
   MuzzleFlash: {fileID: 3045757806268045126}
   HitEffect: {fileID: 2896446538316271325, guid: 5b05f19e764ff9f4aa9fa8d98da21db6, type: 3}
   ammoSlot: {fileID: 5318587850814371544}
+  ammoType: 0
+  timeBetweenShots: 0.5
 --- !u!1001 &3050650838703562148
 PrefabInstance:
   m_ObjectHideFlags: 0
