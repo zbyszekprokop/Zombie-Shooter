@@ -3463,7 +3463,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 
-      type: 
+      type: asset
       description: A framework for making any serializable field a setting, complete
         with a pre-built settings interface.
       status: 4

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]float Health =100f;
+    [SerializeField]TextMeshProUGUI healthDisplay;
     DamageDisplay damageDisplay;
     void Start() 
     {
@@ -14,11 +16,10 @@ public class PlayerHealth : MonoBehaviour
     {
         damageDisplay.DisplayDamage();
         Health -= damage;
-        Debug.Log("Health: " + Health);
+        healthDisplay.text = Health.ToString();
         if(Health <= 1)
         {
             GetComponent<DeathHandler>().HandleDeath();
-            Debug.Log("dead :(");
         }
     }
 }

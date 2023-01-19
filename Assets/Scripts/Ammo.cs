@@ -11,6 +11,8 @@ public class Ammo : MonoBehaviour
     {
         public AmmoType ammoType;
         public int ammoAmount;
+        public AudioSource audioSource;
+        public AudioClip shootSFX;
     }
     public int GetCurrentAmmo(AmmoType ammoType)
     {
@@ -23,6 +25,7 @@ public class Ammo : MonoBehaviour
     public void ReduceCurrentAmmo(AmmoType ammoType)
     {
         GetAmmoSlot(ammoType).ammoAmount--;
+        GetAmmoSlot(ammoType).audioSource.PlayOneShot(GetAmmoSlot(ammoType).shootSFX);
     }
     private AmmoSlot GetAmmoSlot(AmmoType ammoType)
     {
